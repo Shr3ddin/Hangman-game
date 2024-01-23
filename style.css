@@ -10,6 +10,7 @@
 	--bg-hover: #286e6c;
 	--white: #fbfbfb;
 	--black: #171717;
+	--red: #b80808;
 }
 
 body {
@@ -36,7 +37,6 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 3.5rem;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -44,6 +44,7 @@ body {
 	background-color: var(--white);
 	opacity: 0;
 	visibility: hidden;
+	z-index: 2;
 	transform: translateY(100%);
 	transition: 0.6s;
 }
@@ -54,7 +55,29 @@ body {
 	visibility: visible;
 }
 
-.result-modal .play-again-btn {
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 3.5rem;
+	text-align: center;
+}
+
+.modal-content l h2 {
+	font-size: 2.4rem;
+}
+
+.modal-content  p {
+	font-size: 1.4rem;
+}
+
+.modal-content  span {
+	color: var(--bg);
+	font-weight: bold;
+}
+
+.modal-content .play-again-btn {
 	padding: 1.5rem 3rem;
 	border-radius: 0.5rem;
 	border: none;
@@ -63,6 +86,11 @@ body {
 	font-size: 1.2rem;
 	animation: bounce 0.8s ease 2s infinite alternate;
 	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.result-modal .play-again-btn:hover {
+	background-color: var(--bg-hover);
 }
 
 @keyframes bounce {
@@ -78,8 +106,7 @@ body {
 }
 
 .main h1 {
-	font-size: calc(1.3rem + 3.7vw);
-	margin-bottom: 1rem;
+	display: none;
 }
 
 .game-container {
@@ -88,14 +115,14 @@ body {
 	align-items: center;
 	justify-content: center;
 	gap: 0.8rem;
-	max-width: 30rem;
+	max-width: 34rem;
 	padding: 2rem 1.5rem;
 	border-radius: 1rem;
 	background-color: var(--white);
 }
 
 .hangman-img-box img {
-	max-width: 12rem;
+	max-width: 16rem;
 }
 
 .hangman-content {
@@ -103,7 +130,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: .5rem;
+	gap: 0.5rem;
 }
 
 .word-letters {
@@ -133,7 +160,7 @@ body {
 }
 
 .guesses-text span {
-	color: #b80808;
+	color: var(--red);
 }
 
 .keyboard {
@@ -154,14 +181,32 @@ body {
 }
 
 .keyboard .key:hover {
-background-color: var(--bg-hover);
+	background-color: var(--bg-hover);
 }
 
 @media (min-width: 768px) {
+	.result-modal {
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+
+	.modal-content {
+		padding: 4rem 5rem;
+		background-color: var(--white);
+		border-radius: 1rem;
+		box-shadow: 1px 1px 6px 5px rgba(0, 0, 0, 0.75);
+	}
+
+	.main h1 {
+		display: block;
+		font-size: calc(1.3rem + 2.7vw);
+		margin-bottom: 1rem;
+	}
+
 	.game-container {
 		flex-direction: row;
 		max-width: 80vw;
 		gap: 3rem;
+		padding: 3rem 2.5rem;
 	}
 
 	.hangman-img-box img {
@@ -169,6 +214,17 @@ background-color: var(--bg-hover);
 	}
 
 	.hangman-content {
-		gap: 1.2rem
+		gap: 1.2rem;
+	}
+}
+
+@media (max-width: 330px) {
+	.game-container {
+		max-width: 20rem;
+		padding: 1rem 0.5rem;
+	}
+
+	.hangman-img-box img {
+		max-width: 8rem;
 	}
 }
