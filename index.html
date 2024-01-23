@@ -12,27 +12,37 @@
 
 	<body>
 		<main class="main">
-            <h1>Hangman Game</h1>
+			<div class="result-modal">
+				<h2>Game Over! You lost!</h2>
+				<p>Correct answer was: <span>sword</span></p>
+                <button class="play-again-btn">Play again</button>
+			</div>
+			<h1>Hangman Game</h1>
 			<div class="game-container">
 				
-				<div class="hangman-img-box">
+                <div class="hangman-img-box">
 					<img src="./img/hangman-0.svg" alt="" />
 				</div>
-				<div class="word-letters">
+
+			<div class="hangman-content">
+                <div class="word-letters">
 					<p class="letter"></p>
-					<p class="letter"></p>
+					<p class="letter guessed">A</p>
 					<p class="letter"></p>
 					<p class="letter"></p>
 					<p class="letter"></p>
 					<p class="letter"></p>
 					<p class="letter"></p>
 				</div>
+
 				<div class="hint-text">
 					<p><span>Hint:</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
 				</div>
+
 				<div class="guesses-text">
 					<p>Incorrect guesses: <span>0 / 5</span></p>
 				</div>
+                
 				<div class="keyboard">
 					<button class="key">A</button>
 					<button class="key">B</button>
@@ -61,6 +71,7 @@
 					<button class="key">Y</button>
 					<button class="key">Z</button>
 				</div>
+            </div>
 			</div>
 		</main>
 
