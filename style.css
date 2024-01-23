@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #2b7a78;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+}
+
+.main h1 {
+	margin-bottom: 1rem;
+}
+
+.game-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.8rem;
+	max-width: 21rem;
+	padding: 2rem 1.5rem;
+	border-radius: 1rem;
+	background-color: #fbfbfb;
+}
+
+.hangman-img-box img {
+	max-width: 15rem;
+}
