@@ -64,15 +64,15 @@ body {
 	text-align: center;
 }
 
-.modal-content l h2 {
+.modal-content h2 {
 	font-size: 2.4rem;
 }
 
-.modal-content  p {
+.modal-content p {
 	font-size: 1.4rem;
 }
 
-.modal-content  span {
+.modal-content span {
 	color: var(--bg);
 	font-weight: bold;
 }
@@ -84,9 +84,9 @@ body {
 	color: var(--white);
 	background-color: var(--bg);
 	font-size: 1.2rem;
-	animation: bounce 0.8s ease 2s infinite alternate;
 	cursor: pointer;
 	transition: background-color 0.3s;
+	animation: bounce 0.8s ease 2s infinite alternate;
 }
 
 .result-modal .play-again-btn:hover {
@@ -114,7 +114,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 0.8rem;
 	max-width: 34rem;
 	padding: 2rem 1.5rem;
 	border-radius: 1rem;
@@ -122,21 +121,24 @@ body {
 }
 
 .hangman-img-box img {
-	max-width: 16rem;
+	user-select: none;
+	max-width: 17rem;
 }
 
 .hangman-content {
 	display: flex;
 	flex-direction: column;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	gap: 0.5rem;
+	gap: 1rem;
+	padding: 0.5rem;
 }
 
 .word-letters {
 	display: flex;
 	gap: 0.3rem;
-	padding: 1rem 0;
+	padding: 0.5rem 0;
 	font-size: 1.5rem;
 	text-align: center;
 	font-weight: bold;
@@ -149,6 +151,12 @@ body {
 
 .letter.guessed {
 	border-color: transparent;
+}
+
+.hint-text {
+	text-align: center;
+	font-size: 1.1rem;
+	margin-bottom: 15px;
 }
 
 .hint-text span {
@@ -164,16 +172,15 @@ body {
 }
 
 .keyboard {
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	grid-template-rows: repeat(4, 1fr);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: 0.5rem;
-	width: 100%;
 }
 
 .keyboard .key {
 	padding: 0.5rem 0.7rem;
-	color: #fbfbfb;
+	color: var(--white);
 	font-weight: bold;
 	background-color: var(--bg);
 	border: none;
@@ -204,13 +211,13 @@ body {
 
 	.game-container {
 		flex-direction: row;
-		max-width: 80vw;
-		gap: 3rem;
+		max-width: 50rem;
+		gap: 1rem;
 		padding: 3rem 2.5rem;
 	}
 
 	.hangman-img-box img {
-		max-width: 100%;
+		max-width: 20rem;
 	}
 
 	.hangman-content {
