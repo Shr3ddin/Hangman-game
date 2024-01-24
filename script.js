@@ -43,6 +43,7 @@ const wordList = [
 const keyboard = document.querySelector('.keyboard');
 const keys = keyboard.querySelectorAll('.key');
 const hintContent = document.querySelector('.hint-text');
+const wordLetters = document.querySelector('.word-letters');
 
 const handleKeys = e => {
 	const clickedKey = e.target.textContent;
@@ -55,17 +56,14 @@ const getRandomExample = () => {
 
 	hintContent.innerHTML = `<p><span>Hint:</span> ${hint}</p>`;
 
-	console.log(word, hint);
-
-	// for (i = 0; i < wordList.length; i++) {
-	// 	console.log('something');
-	// }
+	wordLetters.innerHTML = word
+		.split('')
+		.map(() => `<p class="letter"></p>`)
+		.join('');
 };
 
 keys.forEach(key => {
 	key.addEventListener('click', handleKeys);
 });
-
-console.log(wordList.length);
 
 getRandomExample();
