@@ -45,14 +45,12 @@ const keys = keyboard.querySelectorAll('.key');
 const hintContent = document.querySelector('.hint-text');
 const wordLetters = document.querySelector('.word-letters');
 
-const handleKeys = e => {
-	const clickedKey = e.target.textContent;
-
-	console.log(clickedKey);
-};
+let currentWord;
 
 const getRandomExample = () => {
 	const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
+
+	currentWord = word;
 
 	hintContent.innerHTML = `<p><span>Hint:</span> ${hint}</p>`;
 
@@ -62,8 +60,18 @@ const getRandomExample = () => {
 		.join('');
 };
 
+const startGame = e => {
+	const clickedKey = e.target.textContent;
+
+	if (currentWord.includes(clickedKey)) {
+		console.log(clickedKey, 'exist on the list');
+	} else {
+		console.log(clickedKey);
+	}
+};
+
 keys.forEach(key => {
-	key.addEventListener('click', handleKeys);
+	key.addEventListener('click', startGame);
 });
 
 getRandomExample();
