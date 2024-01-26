@@ -38,50 +38,130 @@
 // 		word: 'chocolate',
 // 		hint: 'A sweet treat made from cocoa beans',
 // 	},
+// 	{
+// 		word: 'computer',
+// 		hint: 'Electronic device for processing data',
+// 	},
+// 	{
+// 		word: 'ocean',
+// 		hint: 'A vast body of water surrounding continents',
+// 	},
+// 	{
+// 		word: 'book',
+// 		hint: 'A collection of printed or written pages, often bound',
+// 	},
+// 	{
+// 		word: 'mountains',
+// 		hint: 'High, natural terrain formations',
+// 	},
+// 	{
+// 		word: 'bicycle',
+// 		hint: 'A two-wheeled vehicle powered by muscle force',
+// 	},
+// 	{
+// 		word: 'flower',
+// 		hint: 'The reproductive part of a plant, often colorful and fragrant',
+// 	},
+// 	{
+// 		word: 'cat',
+// 		hint: 'A domestic predator, a popular pet',
+// 	},
+// 	{
+// 		word: 'car',
+// 		hint: 'A mechanical vehicle used for transportation',
+// 	},
+// 	{
+// 		word: 'phone',
+// 		hint: 'An electronic device for remote communication',
+// 	},
+// 	{
+// 		word: 'star',
+// 		hint: 'A luminous celestial body, mainly composed of hydrogen and helium',
+// 	},
 // ];
 
 // polish version for tests
 
 const wordList = [
-    {
-        word: 'slonce',
-        hint: 'Źródło światła i ciepła na niebie',
-    },
+	{
+		word: 'slonce',
+		hint: 'Źródło światła i ciepła na niebie',
+	},
 
-    {
-        word: 'przygoda',
-        hint: 'Ekscytujące i śmiałe doświadczenie',
-    },
+	{
+		word: 'przygoda',
+		hint: 'Ekscytujące i śmiałe doświadczenie',
+	},
 
-    {
-        word: 'slon',
-        hint: 'Największy lądowy ssak',
-    },
+	{
+		word: 'slon',
+		hint: 'Największy lądowy ssak',
+	},
 
-    {
-        word: 'klawiatura',
-        hint: 'Urządzenie wejściowe do komputerów',
-    },
+	{
+		word: 'klawiatura',
+		hint: 'Urządzenie wejściowe do komputerów',
+	},
 
-    {
-        word: 'motyl',
-        hint: 'Kolorowy owad z skrzydłami',
-    },
+	{
+		word: 'motyl',
+		hint: 'Kolorowy owad z skrzydłami',
+	},
 
-    {
-        word: 'galaktyka',
-        hint: 'Ogromny system gwiazd i ciał niebieskich',
-    },
+	{
+		word: 'galaktyka',
+		hint: 'Ogromny system gwiazd i ciał niebieskich',
+	},
 
-    {
-        word: 'symfonia',
-        hint: 'Kompozycja muzyczna dla orkiestry',
-    },
+	{
+		word: 'symfonia',
+		hint: 'Kompozycja muzyczna dla orkiestry',
+	},
 
-    {
-        word: 'czekolada',
-        hint: 'Słodycz wytwarzana z ziaren kakaowca',
-    },
+	{
+		word: 'czekolada',
+		hint: 'Słodycz wytwarzana z ziaren kakaowca',
+	},
+	{
+		word: 'komputer',
+		hint: 'Elektroniczne urządzenie do przetwarzania danych',
+	},
+	{
+		word: 'ocean',
+		hint: 'Ogromna masa wodna otaczająca kontynenty',
+	},
+	{
+		word: 'książka',
+		hint: 'Zbiór drukowanych lub pisanych stron, często oprawionych',
+	},
+	{
+		word: 'góry',
+		hint: 'Wysokie, naturalne formacje terenu',
+	},
+	{
+		word: 'rower',
+		hint: 'Pojazd na dwóch kołach napędzany siłą mięśni',
+	},
+	{
+		word: 'kwiat',
+		hint: 'Reprodukcyjna część rośliny, często kolorowa i pachnąca',
+	},
+	{
+		word: 'kot',
+		hint: 'Domowy drapieżnik, popularne zwierzę domowe',
+	},
+	{
+		word: 'samochód',
+		hint: 'Pojazd mechaniczny używany do transportu',
+	},
+	{
+		word: 'telefon',
+		hint: 'Urządzenie elektroniczne do komunikacji na odległość',
+	},
+	{
+		word: 'gwiazda',
+		hint: 'Świecące ciało niebieskie, głównie złożone z wodoru i helu',
+	},
 ];
 
 const keyboard = document.querySelector('.keyboard');
@@ -95,7 +175,7 @@ const modal = document.querySelector('.result-modal');
 let currentWord;
 let mistake = 0;
 let correctLetters = [];
-const maxAttempts = 5;
+const maxAttempts = 6;
 
 const getRandomExample = () => {
 	const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
@@ -116,13 +196,11 @@ const gameOver = isWin => {
 		modal.querySelector('h2').textContent = `${isWin ? 'Congrats! You won!' : 'Game Over! You lost!'}`;
 		modal.querySelector('p').innerHTML = `${modalText} <span>${currentWord}</span>`;
 		modal.classList.add('active');
-	}, 200);
+	}, 400);
 };
 
 const startGame = e => {
 	const clickedKey = e.target.textContent;
-
-	console.log(currentWord);
 
 	if (currentWord.includes(clickedKey)) {
 		[...currentWord].forEach((letter, index) => {
