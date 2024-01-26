@@ -131,11 +131,11 @@ const wordList = [
 		hint: 'Ogromna masa wodna otaczająca kontynenty',
 	},
 	{
-		word: 'książka',
+		word: 'ksiazka',
 		hint: 'Zbiór drukowanych lub pisanych stron, często oprawionych',
 	},
 	{
-		word: 'góry',
+		word: 'gory',
 		hint: 'Wysokie, naturalne formacje terenu',
 	},
 	{
@@ -151,7 +151,7 @@ const wordList = [
 		hint: 'Domowy drapieżnik, popularne zwierzę domowe',
 	},
 	{
-		word: 'samochód',
+		word: 'samochod',
 		hint: 'Pojazd mechaniczny używany do transportu',
 	},
 	{
