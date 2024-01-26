@@ -188,6 +188,11 @@ body {
 	cursor: pointer;
 }
 
+.key[disabled] {
+	opacity: 0.4;
+	pointer-events: none;
+}
+
 .keyboard .key:hover {
 	background-color: var(--bg-hover);
 }
