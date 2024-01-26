@@ -44,7 +44,7 @@
 
 const wordList = [
     {
-        word: 'słońce',
+        word: 'slonce',
         hint: 'Źródło światła i ciepła na niebie',
     },
 
@@ -54,7 +54,7 @@ const wordList = [
     },
 
     {
-        word: 'słoń',
+        word: 'slon',
         hint: 'Największy lądowy ssak',
     },
 
