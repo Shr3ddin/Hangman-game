@@ -1,43 +1,87 @@
+// const wordList = [
+// 	{
+// 		word: 'sunshine',
+// 		hint: 'Source of light and warmth in the sky',
+// 	},
+
+// 	{
+// 		word: 'adventure',
+// 		hint: 'Exciting and daring experience',
+// 	},
+
+// 	{
+// 		word: 'elephant',
+// 		hint: 'Largest land mammal',
+// 	},
+
+// 	{
+// 		word: 'keyboard',
+// 		hint: 'Input device for computers',
+// 	},
+
+// 	{
+// 		word: 'butterfly',
+// 		hint: 'Colorful insect with wings',
+// 	},
+
+// 	{
+// 		word: 'galaxy',
+// 		hint: 'Vast system of stars and celestial bodies',
+// 	},
+
+// 	{
+// 		word: 'symphony',
+// 		hint: 'Musical composition for an orchestra',
+// 	},
+
+// 	{
+// 		word: 'chocolate',
+// 		hint: 'A sweet treat made from cocoa beans',
+// 	},
+// ];
+
+// polish version for tests
+
 const wordList = [
-	{
-		word: 'sunshine',
-		hint: 'Source of light and warmth in the sky',
-	},
+    {
+        word: 'słońce',
+        hint: 'Źródło światła i ciepła na niebie',
+    },
 
-	{
-		word: 'adventure',
-		hint: 'Exciting and daring experience',
-	},
+    {
+        word: 'przygoda',
+        hint: 'Ekscytujące i śmiałe doświadczenie',
+    },
 
-	{
-		word: 'elephant',
-		hint: 'Largest land mammal',
-	},
+    {
+        word: 'słoń',
+        hint: 'Największy lądowy ssak',
+    },
 
-	{
-		word: 'keyboard',
-		hint: 'Input device for computers',
-	},
+    {
+        word: 'klawiatura',
+        hint: 'Urządzenie wejściowe do komputerów',
+    },
 
-	{
-		word: 'butterfly',
-		hint: 'Colorful insect with wings',
-	},
+    {
+        word: 'motyl',
+        hint: 'Kolorowy owad z skrzydłami',
+    },
 
-	{
-		word: 'galaxy',
-		hint: 'Vast system of stars and celestial bodies',
-	},
+    {
+        word: 'galaktyka',
+        hint: 'Ogromny system gwiazd i ciał niebieskich',
+    },
 
-	{
-		word: 'symphony',
-		hint: 'Musical composition for an orchestra',
-	},
+    {
+        word: 'symfonia',
+        hint: 'Kompozycja muzyczna dla orkiestry',
+    },
 
-	{
-		word: 'chocolate',
-		hint: 'Source of light and warmth in the sky',
-	},
+    {
+        word: 'czekolada',
+        hint: 'Słodycz wytwarzana z ziaren kakaowca',
+    },
 ];
 
 const keyboard = document.querySelector('.keyboard');
