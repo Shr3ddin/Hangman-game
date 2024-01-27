@@ -171,11 +171,27 @@ const wordLetters = document.querySelector('.word-letters');
 const guesses = document.querySelector('.guesses-text span');
 const hangmanImg = document.querySelector('.hangman-img-box img');
 const modal = document.querySelector('.result-modal');
+const playAgainBtn = document.querySelector('.play-again-btn');
 
-let currentWord;
-let mistake = 0;
-let correctLetters = [];
+let currentWord, mistake, correctLetters;
 const maxAttempts = 6;
+
+const playAgain = () => {
+	mistake = 0;
+	correctLetters = [];
+	hangmanImg.src = `./img/hangman-${mistake}.svg`;
+	guesses.textContent = `${mistake} / ${maxAttempts}`;
+
+	keys.forEach(key => {
+		key.disabled = false;
+	});
+
+	wordLetters.innerHTML = currentWord
+		.split('')
+		.map(() => `<p class="letter"></p>`)
+		.join('');
+	modal.classList.remove('active');
+};
 
 const getRandomExample = () => {
 	const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
@@ -184,10 +200,7 @@ const getRandomExample = () => {
 
 	hintContent.innerHTML = `<p><span>Hint:</span> ${hint}</p>`;
 
-	wordLetters.innerHTML = word
-		.split('')
-		.map(() => `<p class="letter"></p>`)
-		.join('');
+	playAgain();
 };
 
 const gameOver = isWin => {
@@ -227,3 +240,4 @@ keys.forEach(key => {
 });
 
 getRandomExample();
+playAgainBtn.addEventListener('click', getRandomExample);
